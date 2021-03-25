@@ -7,14 +7,16 @@ public class Investment {
     public int investmentsOwned;
     public int currentCost;
     public int currentIncome;
+    public String investmentTitle;
 
-//    public Investment() {
-//        this.baseCost = 10;
-//        this.baseIncome = 1;
-//        this.investmentsOwned = 0;
-//        this.currentCost = 10;
-//        this.currentIncome = 0;
-//    }
+    public Investment() {
+        this.baseCost = 10;
+        this.baseIncome = 1;
+        this.investmentsOwned = 0;
+        this.currentCost = 10;
+        this.currentIncome = 0;
+        this.investmentTitle = "Basic Investment";
+    }
 
     public int getInvestmentsOwned() {
         return investmentsOwned;
@@ -36,5 +38,9 @@ public class Investment {
 
     public int getCurrentIncome() {
         return this.currentIncome;
+    }
+
+    public String getInvestmentTitle() {
+        return this.investmentTitle;
     }
 }
