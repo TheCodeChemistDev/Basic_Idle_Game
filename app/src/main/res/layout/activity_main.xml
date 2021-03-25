@@ -55,81 +55,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddMoney">
-
-        <LinearLayout
-            android:id="@+id/linStandardInvestment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tvStandardInvestmentTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_weight="3"
-                android:gravity="center_horizontal"
-                android:text="Standard  |  Owned: 0  |  Income £ 0/s" />
-
-            <Button
-                android:id="@+id/btnBuyStandardInvestment"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Buy for £10" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linBetterInvestment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tvBetterInvestmentTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_weight="3"
-                android:gravity="center_horizontal"
-                android:text="Better  |  Owned: 0  |  Income £ 0/s" />
-
-            <Button
-                android:id="@+id/btnBuyBetterInvestment"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Buy for £ 500" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linBestInvestment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tvBestInvestmentTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_weight="3"
-                android:gravity="center_horizontal"
-                android:text="Best  |  Owned: 0  |  Income £ 0/s" />
-
-            <Button
-                android:id="@+id/btnBuyBestInvestment"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Buy for £ 5000" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/btnAddMoney"/>
 
     <Button
         android:id="@+id/btnDebugCash"
@@ -137,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="32dp"
         android:text="Get £ 10000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,12 +74,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/btnDebugCash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linInvestments" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAddMoney" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,29 +27,29 @@ public class Game {
     public void purchaseInvestment(View viewBtnClicked) {
         Button btnClicked = (Button) viewBtnClicked;
         int cost;
-        switch(btnClicked.getId()) {
-            case R.id.btnBuyStandardInvestment:
-                cost = this.standardInvestments.getCurrentCost();
-                if(money >= cost) {
-                    this.standardInvestments.purchaseInvestment();
-                    this.money = this.money - cost;
-                }
-                break;
-            case R.id.btnBuyBetterInvestment:
-                cost = this.betterInvestments.getCurrentCost();
-                if(money >= cost) {
-                    this.betterInvestments.purchaseInvestment();
-                    this.money = this.money - cost;
-                }
-                break;
-            case R.id.btnBuyBestInvestment:
-                cost = this.bestInvestments.getCurrentCost();
-                if(money >= cost) {
-                    this.bestInvestments.purchaseInvestment();
-                    this.money = this.money - cost;
-                }
-                break;
-        }
+//        switch(btnClicked.getId()) {
+//            case R.id.btnBuyStandardInvestment:
+//                cost = this.standardInvestments.getCurrentCost();
+//                if(money >= cost) {
+//                    this.standardInvestments.purchaseInvestment();
+//                    this.money = this.money - cost;
+//                }
+//                break;
+//            case R.id.btnBuyBetterInvestment:
+//                cost = this.betterInvestments.getCurrentCost();
+//                if(money >= cost) {
+//                    this.betterInvestments.purchaseInvestment();
+//                    this.money = this.money - cost;
+//                }
+//                break;
+//            case R.id.btnBuyBestInvestment:
+//                cost = this.bestInvestments.getCurrentCost();
+//                if(money >= cost) {
+//                    this.bestInvestments.purchaseInvestment();
+//                    this.money = this.money - cost;
+//                }
+//                break;
+//        }
     }
 
     public void generateIncomeFromInvestments() {
