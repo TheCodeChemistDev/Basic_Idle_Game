@@ -2,4 +2,39 @@ package com.thecodechemist.basicidlegame;
 
 public class Investment {
 
+    public int baseCost;
+    public int baseIncome;
+    public int investmentsOwned;
+    public int currentCost;
+    public int currentIncome;
+
+//    public Investment() {
+//        this.baseCost = 10;
+//        this.baseIncome = 1;
+//        this.investmentsOwned = 0;
+//        this.currentCost = 10;
+//        this.currentIncome = 0;
+//    }
+
+    public int getInvestmentsOwned() {
+        return investmentsOwned;
+    }
+
+    public void purchaseInvestment() {
+        this.investmentsOwned = this.investmentsOwned + 1;
+        this.currentIncome = currentIncome + baseIncome;
+        increaseInvestmentCost();
+    }
+
+    public void increaseInvestmentCost() {
+
+    }
+
+    public int getCurrentCost() {
+        return this.currentCost;
+    }
+
+    public int getCurrentIncome() {
+        return this.currentIncome;
+    }
 }

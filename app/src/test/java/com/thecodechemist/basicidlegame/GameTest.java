@@ -24,16 +24,20 @@ public class GameTest {
     @Test
     public void test_investmentCountIncreaseOnPurchase() {
         Game game = new Game();
-        game.moneyButtonTapped();
+        for(int i = 0; i < 10; i++) {
+            game.moneyButtonTapped();
+        }
         game.purchaseInvestment();
 
-        assertEquals(1, game.getInvestmentCount());
+        assertEquals(1, game.getInvestments().getInvestmentsOwned());
     }
 
     @Test
     public void test_moneyReducedAfterPurchase() {
         Game game = new Game();
-        game.moneyButtonTapped();
+        for(int i = 0; i < 10; i++) {
+            game.moneyButtonTapped();
+        }
         game.purchaseInvestment();
 
         assertEquals(0, game.getMoney());
@@ -42,21 +46,13 @@ public class GameTest {
     @Test
     public void test_incomeFromInvestment() {
         Game game = new Game();
-        game.moneyButtonTapped();
+        for(int i = 0; i < 10; i++) {
+            game.moneyButtonTapped();
+        }
         game.purchaseInvestment();
-        hUiUpdate = mock(Handler.class);
-        rUiUpdate = new Runnable() {
-            @Override
-            public void run() {
-                game.generateIncomeFromInvestments();
-                if(counter < 4) {
-                    hUiUpdate.postDelayed(rUiUpdate, 1000);
-                }
-                counter += 1;
-            }
-        };
+        game.generateIncomeFromInvestments();
 
-        assertEquals(5, game.getMoney());
+        assertEquals(1, game.getMoney());
 
     }
 
