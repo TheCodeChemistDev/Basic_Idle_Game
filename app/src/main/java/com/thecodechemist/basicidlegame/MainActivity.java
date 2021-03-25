@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Game game;
     Handler hUiUpdate;
     Runnable rUiUpdate;
+    ListView lvInvestments;
     Button btnBuyStandardInvestment;
     Button btnBuyBetterInvestment;
     Button btnBuyBestInvestment;
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         game = new Game();
+
+        lvInvestments = findViewById(R.id.lvInvestments);
 
         hUiUpdate = new Handler();
         rUiUpdate = () -> {
