@@ -1,21 +1,33 @@
 package com.thecodechemist.basicidlegame;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import com.thecodechemist.basicidlegame.MainActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Game {
 
-    private final String TAG = "Kemist";
+    private final String TAG = "Game";
     private int money;
-    private Level1Investment standardInvestments;
-    private Level2Investment betterInvestments;
-    private Level3Investment bestInvestments;
+    private List<Investment> investmentsList;
 
     public Game() {
         this.money = 0;
-        this.standardInvestments = new Level1Investment();
-        this.betterInvestments = new Level2Investment();
-        this.bestInvestments = new Level3Investment();
+        //Create an object for each different type of investment in the game
+        this.investmentsList = new ArrayList<Investment>();
+        this.investmentsList.add(new Level1Investment());
+        this.investmentsList.add(new Level2Investment());
+        this.investmentsList.add(new Level3Investment());
+        this.investmentsList.add(new Level4Investment());
+        this.investmentsList.add(new Level5Investment());
+        this.investmentsList.add(new Level6Investment());
+        this.investmentsList.add(new Level7Investment());
+        this.investmentsList.add(new Level8Investment());
+        this.investmentsList.add(new Level9Investment());
+        this.investmentsList.add(new Level10Investment());
 
     }
 
@@ -24,36 +36,21 @@ public class Game {
     }
 
 
-    public void purchaseInvestment(View viewBtnClicked) {
-        Button btnClicked = (Button) viewBtnClicked;
+    public void purchaseInvestment(int investmentId) {
+
+        //Find the cost of purchasing the investment and buy it if the user has enough money
+        Investment selectedInvestment = this.investmentsList.get(investmentId);
         int cost;
-//        switch(btnClicked.getId()) {
-//            case R.id.btnBuyStandardInvestment:
-//                cost = this.standardInvestments.getCurrentCost();
-//                if(money >= cost) {
-//                    this.standardInvestments.purchaseInvestment();
-//                    this.money = this.money - cost;
-//                }
-//                break;
-//            case R.id.btnBuyBetterInvestment:
-//                cost = this.betterInvestments.getCurrentCost();
-//                if(money >= cost) {
-//                    this.betterInvestments.purchaseInvestment();
-//                    this.money = this.money - cost;
-//                }
-//                break;
-//            case R.id.btnBuyBestInvestment:
-//                cost = this.bestInvestments.getCurrentCost();
-//                if(money >= cost) {
-//                    this.bestInvestments.purchaseInvestment();
-//                    this.money = this.money - cost;
-//                }
-//                break;
-//        }
+        cost = selectedInvestment.getCurrentCost();
+        if(this.money >= cost) {
+            selectedInvestment.purchaseInvestment();
+            this.money = this.money - cost;
+        }
     }
 
     public void generateIncomeFromInvestments() {
-        this.money = this.money + (this.standardInvestments.getInvestmentsOwned()) + (this.betterInvestments.getInvestmentsOwned() * 10) + (this.bestInvestments.getInvestmentsOwned() * 100);
+        int level1InvestmentsOwned = this.investmentsList.get(0).getInvestmentsOwned();
+        this.money = this.money + level1InvestmentsOwned;
 
     }
 
@@ -65,16 +62,8 @@ public class Game {
         this.money = money;
     }
 
-    public Level1Investment getStandardInvestments() {
-        return this.standardInvestments;
-    }
-
-    public Level2Investment getBetterInvestments() {
-        return this.betterInvestments;
-    }
-
-    public Level3Investment getBestInvestments() {
-        return this.bestInvestments;
+    public List<Investment> getInvestmentsList() {
+        return this.investmentsList;
     }
 
 }

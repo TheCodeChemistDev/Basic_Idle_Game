@@ -15,7 +15,7 @@ public class Investment {
         this.investmentsOwned = 0;
         this.currentCost = 10;
         this.currentIncome = 0;
-        this.investmentTitle = "Basic Investment";
+        this.investmentTitle = "Investment";
     }
 
     public int getInvestmentsOwned() {

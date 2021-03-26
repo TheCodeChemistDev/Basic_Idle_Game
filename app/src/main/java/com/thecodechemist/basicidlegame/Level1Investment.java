@@ -8,6 +8,7 @@ public class Level1Investment extends Investment {
         this.investmentsOwned = 0;
         this.currentCost = 10;
         this.currentIncome = 0;
+        this.investmentTitle = "Level 1 Investment";
     }
 
     @Override
