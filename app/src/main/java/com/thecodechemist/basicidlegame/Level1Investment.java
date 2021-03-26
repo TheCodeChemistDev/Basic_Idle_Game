@@ -13,7 +13,6 @@ public class Level1Investment extends Investment {
 
     @Override
     public void increaseInvestmentCost() {
-        //TODO: Implement scaling for Standard Investment Cost
-        this.currentCost = (int) Math.ceil(this.currentCost + (this.investmentsOwned * 1.2));
+        this.currentCost = (int) Math.ceil(this.currentCost * (1.07 + (this.investmentsOwned * 0.001)));
     }
 }

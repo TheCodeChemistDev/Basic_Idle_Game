@@ -1,10 +1,5 @@
 package com.thecodechemist.basicidlegame;
 
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import com.thecodechemist.basicidlegame.MainActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,12 +7,12 @@ public class Game {
 
     private final String TAG = "Game";
     private int money;
-    private List<Investment> investmentsList;
+    private final List<Investment> investmentsList;
 
     public Game() {
         this.money = 0;
         //Create an object for each different type of investment in the game
-        this.investmentsList = new ArrayList<Investment>();
+        this.investmentsList = new ArrayList<>();
         this.investmentsList.add(new Level1Investment());
         this.investmentsList.add(new Level2Investment());
         this.investmentsList.add(new Level3Investment());

@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,8 @@ import java.util.List;
 public class InvestmentArrayAdapter extends ArrayAdapter<Investment> {
 
     private static final String TAG = "InvestmentArrayAdapter";
-    private List<Investment> investmentList = new ArrayList<>();
-    private Game game;
+    private final List<Investment> investmentList = new ArrayList<>();
+    private final Game game;
 
     static class InvestmentViewHolder {
         TextView tvInvestmentTitle;
@@ -70,14 +69,11 @@ public class InvestmentArrayAdapter extends ArrayAdapter<Investment> {
         viewHolder.tvInvestmentOwned.setText("Owned: " + investment.getInvestmentsOwned());
         viewHolder.tvInvestmentIncome.setText("Income: £ " + investment.getCurrentIncome() + "/s");
         viewHolder.btnBuyInvestment.setText("Buy X 1 \n £ " + investment.getCurrentCost());
-        viewHolder.btnBuyInvestment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //When the buy button is tapped, attempt to purchase the selected investment
-                Log.i(TAG, getItem(position).getInvestmentTitle());
-                game.purchaseInvestment(position);
-                notifyDataSetChanged();
-            }
+        viewHolder.btnBuyInvestment.setOnClickListener(v -> {
+            //When the buy button is tapped, attempt to purchase the selected investment
+            Log.i(TAG, getItem(position).getInvestmentTitle());
+            game.purchaseInvestment(position);
+            notifyDataSetChanged();
         });
 
         return row;

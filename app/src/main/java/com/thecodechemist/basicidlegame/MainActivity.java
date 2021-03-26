@@ -7,21 +7,17 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-    public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
 
     private Game game;
 
     private InvestmentArrayAdapter investmentArrayAdapter;
-    private ListView lvInvestments;
-
     private Handler hUiUpdate;
     private Runnable rUiUpdate;
 
@@ -34,7 +30,7 @@ import java.util.List;
         game = new Game();
 
         //Setup for Investments ListView
-        lvInvestments = findViewById(R.id.lvInvestments);
+        ListView lvInvestments = findViewById(R.id.lvInvestments);
         investmentArrayAdapter = new InvestmentArrayAdapter(getApplicationContext(), R.layout.investment_list_item, game);
         lvInvestments.setAdapter(investmentArrayAdapter);
         List<Investment> investmentList = game.getInvestmentsList();
@@ -53,22 +49,16 @@ import java.util.List;
 
         //Setup for Gain Money Button
         Button btnAddMoney = findViewById(R.id.btnAddMoney);
-        btnAddMoney.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                game.moneyButtonTapped();
-                updateUI();
-            }
+        btnAddMoney.setOnClickListener(v -> {
+            game.moneyButtonTapped();
+            updateUI();
         });
 
         //Button for debugging/testing purposes only to get a large amount of cash
         Button btnDebugCash = findViewById(R.id.btnDebugCash);
-        btnDebugCash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                game.setMoney(game.getMoney() + 10000);
-                updateUI();
-            }
+        btnDebugCash.setOnClickListener(v -> {
+            game.setMoney(game.getMoney() + 1000000000);
+            updateUI();
         });
 
     }
